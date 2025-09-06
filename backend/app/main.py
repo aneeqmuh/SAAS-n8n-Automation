@@ -12,6 +12,7 @@ from routes.gmail_summary_routes import router as gmail_summary_router
 from routes.oAuth_handling import router as oauth_router
 from routes.gmail_ai_laeblling_route import router as gmail_ai_labelling_router
 
+
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
@@ -30,6 +31,7 @@ app.include_router(gmail_responder_router, tags=["gmail-ai-responder"])
 app.include_router(gmail_summary_router, tags=["gmail-summary"])
 app.include_router(oauth_router, tags=["oauth"])
 app.include_router(gmail_ai_labelling_router, tags=["gmail-ai-labelling"])
+
 
 @app.get("/health")
 def health():
